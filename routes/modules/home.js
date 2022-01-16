@@ -8,13 +8,14 @@ const router = express.Router()
 router.get('/', (req, res) => {
   Promise.all([
     Category.find().lean(),
-    Record.find({ userId: req.user._id }).lean()
+    Record.find({ userId: req.user._id }).populate('categoryId').lean()
   ]).then(data => {
     let totalAmount = 0
     data[1].forEach(record => {
       record.date = record.date.toLocaleString('zh-TW', { dateStyle: 'short' })
       totalAmount += record.amount
     })
+    console.log(data[1])
     res.render('index', { selected: true, categories: data[0], totalAmount, records: data[1] })
   }).catch(err => console.log(err))
 })
@@ -26,7 +27,7 @@ router.get('/category', (req, res) => {
   }
   Promise.all([
     Category.find().lean(),
-    Record.find({ categoryId: req.query.id, userId: req.user._id }).lean()
+    Record.find({ categoryId: req.query.id, userId: req.user._id }).populate('categoryId').lean()
   ]).then(data => {
     let totalAmount = 0
     data[0].forEach(category => {

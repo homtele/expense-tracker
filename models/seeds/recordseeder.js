@@ -68,9 +68,7 @@ db.once('open', () => {
                 name: record.name,
                 amount: record.amount,
                 userId: _user._id,
-                categoryId: category._id,
-                categoryName: category.name,
-                categoryIcon: category.icon
+                categoryId: category._id
               }
               userRecrods.push(userRecord)
             }
