@@ -10,7 +10,8 @@
     
     express, handlebars, bcyptjs || mongodb, mongoose
 *   過程中碰到什麼困難？又如何克服？（例如：查找網路文件）
-    * 如何取得 categoryId || 比較 2 種方法
+    *   如何取得 categoryId || 比較 2 種方法
+    *   Date Object || https://www.w3schools.com/jsref/jsref_obj_date.asp
 *   過程中你有對哪個技術有特別深刻的學習？
 ##  環境建置與需求 (prerequisites)
 *   Node.js

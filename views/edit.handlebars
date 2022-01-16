@@ -1,0 +1,24 @@
+<h1>edit</h1>
+<form action="/records/{{record._id}}?_method=put" method="post">
+  <div>
+    <label for="name">名稱</label>
+    <input type="text" name="name" id="name" value="{{record.name}}">
+  </div>
+  <div>
+    <label for="date">日期</label>
+    <input type="date" name="date" id="date" value="{{record.date}}">
+  </div>
+  <div>
+    <label for="categoryId">類別</label>
+    <select name="categoryId" id="categoryId">
+      {{#each categories}}
+      <option value="{{this._id}}" {{#if this.selected}}selected{{/if}}>{{this.name}}</option>
+      {{/each}}
+    </select>
+  </div>
+  <div>
+    <label for="amount">金額</label>
+    <input type="number" name="amount" id="amount" value="{{record.amount}}">
+  </div>
+  <button type="submit">送出</button>
+</form>

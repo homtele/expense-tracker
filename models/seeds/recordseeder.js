@@ -63,11 +63,14 @@ db.once('open', () => {
           const userRecrods = []
           records.forEach((record, recordIndex) => {
             if (user.recordsMap.includes(recordIndex)) {
+              const category = categories.find(category => category.name === record.categoryName)
               const userRecord = {
                 name: record.name,
                 amount: record.amount,
                 userId: _user._id,
-                categoryId: categories.find(category => category.name === record.categoryName)._id
+                categoryId: category._id,
+                categoryName: category.name,
+                categoryIcon: category.icon
               }
               userRecrods.push(userRecord)
             }
