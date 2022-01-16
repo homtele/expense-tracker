@@ -13,6 +13,7 @@ app.engine('handlebars', exphbs.engine())
 app.set('view engine', 'handlebars')
 
 app.use(methodOverride('_method'))
+app.use(express.static('public'))
 app.use(express.urlencoded({ extended: false }))
 app.use(routes)
 

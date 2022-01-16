@@ -1,24 +1,31 @@
-<h1>new</h1>
-<form action="/records" method="post">
-  <div>
-    <label for="name">名稱</label>
-    <input type="text" name="name" id="name">
-  </div>
-  <div>
-    <label for="date">日期</label>
-    <input type="date" name="date" id="date">
-  </div>
-  <div>
-    <label for="categoryId">類別</label>
-    <select name="categoryId" id="categoryId">
-      {{#each categories}}
-      <option value="{{this._id}}">{{this.name}}</option>
-      {{/each}}
-    </select>
-  </div>
-  <div>
-    <label for="amount">金額</label>
-    <input type="number" name="amount" id="amount">
-  </div>
-  <button type="submit">新增支出</button>
-</form>
+<div class="card">
+  <form action="/records" method="post" class="edit__form">
+    <div class="input-wrapper">
+      <p class="message">*必填欄位</p>
+      <p class="title">請輸入你的支出</p>
+    </div>
+    <div class="input-wrapper">
+      <label for="name">名稱</label>
+      <input type="text" name="name" id="name" required>
+    </div>
+    <div class="input-wrapper">
+      <label for="date">日期</label>
+      <input type="date" name="date" id="date" required>
+    </div>
+    <div class="input-wrapper">
+      <label for="categoryId">類別</label>
+      <select name="categoryId" id="categoryId" required>
+        {{#each categories}}
+        <option value="{{this._id}}">{{this.name}}</option>
+        {{/each}}
+      </select>
+    </div>
+    <div class="input-wrapper">
+      <label for="amount">金額</label>
+      <input type="number" name="amount" id="amount" required>
+    </div>
+    <div class="input-wrapper">
+      <button type="submit">新增支出</button>
+    </div>
+  </form>
+</div>

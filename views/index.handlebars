@@ -1,25 +1,33 @@
-<h1>index</h1>
-<form action="/category">
-  <select name="id" id="id" onchange="this.form.submit()">
-    <option value="all" {{#if selected}}selected{{/if}}>所有類別</option>
-    {{#each categories}}
-    <option value="{{this._id}}" {{#if this.selected}}selected{{/if}}>{{this.name}}</option>
+<div class="card">
+  <form action="/category" class="index__form">
+    <select name="id" id="id" onchange="this.form.submit()">
+      <option value="all" {{#if selected}}selected{{/if}}>所有類別</option>
+      {{#each categories}}
+      <option value="{{this._id}}" {{#if this.selected}}selected{{/if}}>{{this.name}}</option>
+      {{/each}}
+    </select>
+  </form>
+  <div class="index__totalAmount">
+    總金額：
+    <span>{{totalAmount}}</span>
+  </div>
+  <ul class="index__list">
+    {{#each records}}
+    <li>
+      <i class="icon {{this.categoryIcon}}"></i>
+      <div class="name-and-date">
+        <p class="name">{{this.name}}</p>
+        <p class="date">{{this.date}}</p>
+      </div>
+      <p class="amount">{{this.amount}}</p>
+      <div class="button-wrapper">
+        <a href="/records/{{this._id}}/edit" class="button">修改</a>
+        <form action="/records/{{this._id}}?_method=delete" method="post">
+          <button type="submit" class="button">刪除</button>
+        </form>
+      </div>
+    </li>
     {{/each}}
-  </select>
-</form>
-<div>總金額：{{totalAmount}}</div>
-<ul>
-  {{#each records}}
-  <li>
-    <i class="{{this.categoryIcon}}"></i>
-    {{this.name}}
-    {{this.date}}
-    {{this.amount}}
-    <a href="/records/{{this._id}}/edit">修改</a>
-    <form action="/records/{{this._id}}?_method=delete" method="post">
-      <button type="submit">刪除</button>
-    </form>
-  </li>
-  {{/each}}
-</ul>
-<a href="records/new">新增支出</a>
+  </ul>
+  <a href="records/new" class="index__new">新增支出</a>
+</div>
