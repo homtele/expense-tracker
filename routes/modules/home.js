@@ -15,7 +15,6 @@ router.get('/', (req, res) => {
       record.date = record.date.toLocaleString('zh-TW', { dateStyle: 'short' })
       totalAmount += record.amount
     })
-    console.log(data[1])
     res.render('index', { selected: true, categories: data[0], totalAmount, records: data[1] })
   }).catch(err => console.log(err))
 })

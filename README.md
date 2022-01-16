@@ -1,15 +1,16 @@
-#   Expense Tracker
+# expense-tracker
+![index](./public/images/index.jpeg)
 ##  環境建置與需求 (prerequisites)
 *   Node.js
 *   MongoDB
 ##  安裝與執行步驟 (Installation and Execution)
 1.  Clone the repository
     ```
-    git clone https://github.com/homtele/
+    git clone https://github.com/homtele/expense-tracker.git
     ```
 2.  Install dependencies
     ```
-    cd 
+    cd expense-tracker
     npm install
     ```
 3.  Rename `.env.example` to `.env` in the root directory
@@ -37,4 +38,3 @@
 *   刪除任何一筆支出
 *   根據「類別」篩選支出
     *   總金額的計算只會包括被篩選出來的支出總和
-# expense-tracker
