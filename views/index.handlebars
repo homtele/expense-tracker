@@ -1,4 +1,13 @@
 <h1>index</h1>
+<form action="/category">
+  <select name="id" id="id" onchange="this.form.submit()">
+    <option value="all" {{#if selected}}selected{{/if}}>所有類別</option>
+    {{#each categories}}
+    <option value="{{this._id}}" {{#if this.selected}}selected{{/if}}>{{this.name}}</option>
+    {{/each}}
+  </select>
+</form>
+<div>總金額：{{totalAmount}}</div>
 <ul>
   {{#each records}}
   <li>

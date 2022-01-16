@@ -45,7 +45,7 @@ const records = [
   },
   {
     name: '租金',
-    amount: 60,
+    amount: 25000,
     categoryName: '家居物業'
   }
 ]
