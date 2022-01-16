@@ -11,9 +11,14 @@
 <body>
   <header>
     <nav class="navbar">
-      <h1 class="navbar__home">
+      <h1 class="home">
         <a href="/">家庭記帳本</a>
       </h1>
+      {{#if isAuthenticated}}
+      <a href="/users/logout" class="button">登出</a>
+      {{else}}
+      <a href="/users/login" class="button">登入</a>
+      {{/if}}
     </nav>
   </header>
   <main>

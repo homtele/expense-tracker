@@ -25,10 +25,6 @@ ol,
 ul {
   list-style: none;
 }
-a {
-  text-decoration: none;
-  color: black;
-}
 /* global */
 html {
   font-size: 16px;
@@ -44,19 +40,36 @@ header {
   background: #eeeeee;
 }
 .navbar {
-  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
   margin: 0 auto;
 }
-.navbar__home {
+.navbar .home a {
   line-height: 3rem;
   font-size: 1.5rem;
   font-weight: bold;
+  text-decoration: none;
+  color: black;
+}
+.navbar .button {
+  display: block;
+  width: 5rem;
+  height: 2rem;
+  border-radius: 5px;
+  border: 1px solid black;
+  line-height: 2rem;
+  text-align: center;
+  text-decoration: none;
+  color: #ff6500;
+  background-color: white;
 }
 main {
   padding: 1rem 0;
 }
 .card {
-  width: 30%;
+  width: 30rem;
   margin: 0 auto;
 }
 .index__form {
@@ -127,8 +140,10 @@ main {
   border: none;
   font-size: 1rem;
   font-weight: bold;
-  cursor: pointer;
+  text-decoration: none;
+  color: black;
   background-color: inherit;
+  cursor: pointer;
 }
 .index__new {
   display: block;
@@ -139,6 +154,7 @@ main {
   border: 1px solid black;
   line-height: 2.5rem;
   text-align: center;
+  text-decoration: none;
   color: white;
   background-color: #ff6500;
 }
@@ -169,4 +185,42 @@ main {
   font-size: 1rem;
   background-color: inherit;
   cursor: pointer;
+}
+.login__form {
+  text-align: center;
+}
+.login__form h1 {
+  margin: 1rem 0;
+}
+.login__form input {
+  width: 50%;
+  height: 2.5rem;
+  margin: 0 auto 1rem;
+  padding: 0 1rem;
+  font-size: 1rem;
+  line-height: 2.5rem;
+}
+.login__form button {
+  display: block;
+  width: 30%;
+  height: 2.5rem;
+  margin: 0 auto;
+  border-radius: 5px;
+  border: 1px solid black;
+  line-height: 2.5rem;
+  font-size: 1rem;
+  color: white;
+  background-color: #ff6500;
+}
+.login__form hr {
+  width: 70%;
+  margin: 2rem auto;
+}
+.warning-message {
+  margin-bottom: 1rem;
+  color: red;
+}
+.success-message {
+  margin-bottom: 1rem;
+  color: green;
 }

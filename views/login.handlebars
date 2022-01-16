@@ -1,0 +1,13 @@
+<div class="card">
+  <form action="/users/login" method="post" class="login__form">
+    <h1 class="">登入</h1>
+    {{> message}}
+    <input type="email" name="email" id="email" placeholder="電子郵件地址" required>
+    <input type="password" name="password" id="password" placeholder="密碼" required>
+    <button type="submit" class="btn btn-primary">登入</button>
+    <hr>
+    <p class="lead mt-4">
+      還沒有帳號？ <a href="/users/register">註冊</a>
+    </p>
+  </form>
+</div>
